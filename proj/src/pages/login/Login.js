@@ -40,17 +40,17 @@ export default function SignIn() {
 
 async function handleSubmit(event) {
     event.preventDefault(); // prevent the default form submission behavior
-  
+
     const formData = new FormData(event.target); // get the form data
     const email = formData.get('email');
     const password = formData.get('password');
-  
+
     const url = `http://localhost:5000/userss?email=${email}`;
-  
+
     try {
       const response = await fetch(url);
       const data = await response.json();
-  
+
       if (response.ok) {
         console.log("password",data.password);
         // password found, check if it matches
@@ -73,81 +73,165 @@ async function handleSubmit(event) {
       // do something, e.g. display a generic error message
     }
   }
-  
-  
 
 
 
+function handleSubmitCheckout(){
+    window.location = "#/checkout";
+}
 
 
 
+// With only login buttons
+  // return (
+    // <ThemeProvider theme={theme}>
+    //   <Container component="main" maxWidth="xs">
+    //     <CssBaseline />
+    //     <Box
+    //       sx={{
+    //         marginTop: 8,
+    //         display: 'flex',
+    //         flexDirection: 'column',
+    //         alignItems: 'center',
+    //       }}
+    //     >
+    //       <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+    //         <LockOutlinedIcon />
+    //       </Avatar>
+    //       <Typography component="h1" variant="h5">
+    //         Sign in
+    //       </Typography>
+    //       <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+    //         <TextField
+    //           margin="normal"
+    //           required
+    //           fullWidth
+    //           id="email"
+    //           label="Email Address"
+    //           name="email"
+    //           autoComplete="email"
+    //           autoFocus
+    //         />
+    //         <TextField
+    //           margin="normal"
+    //           required
+    //           fullWidth
+    //           name="password"
+    //           label="Password"
+    //           type="password"
+    //           id="password"
+    //           autoComplete="current-password"
+    //         />
+    //         <FormControlLabel
+    //           control={<Checkbox value="remember" color="primary" />}
+    //           label="Remember me"
+    //         />
+    //         <Button
+    //           type="submit"
+    //           fullWidth
+    //           variant="contained"
+    //           sx={{ mt: 3, mb: 2 }}
+    //         >
+    //           Sign In
+    //         </Button>
+    //         <Grid container>
+    //           <Grid item xs>
+    //             <Link href="#" variant="body2">
+    //               Forgot password?
+    //             </Link>
+    //           </Grid>
+    //           <Grid item>
+    //             <Link href="#/sign-up" variant="body2">
+    //               {"Don't have an account? Sign Up"}
+    //             </Link>
+    //           </Grid>
+    //         </Grid>
+    //       </Box>
+    //     </Box>
+    //     <Copyright sx={{ mt: 8, mb: 4 }} />
+    //   </Container>
+    // </ThemeProvider>
+  // );
+
+// With Booking and Checkout Buttons
   return (
-    <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
-        <CssBaseline />
-        <Box
-          sx={{
-            marginTop: 8,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}
-        >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Sign in
-          </Typography>
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
-              autoFocus
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-            />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              Sign In
-            </Button>
-            <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
-                </Link>
-              </Grid>
-              <Grid item>
-                <Link href="#/sign-up" variant="body2">
-                  {"Don't have an account? Sign Up"}
-                </Link>
-              </Grid>
+      <ThemeProvider theme={theme}>
+    <Container component="main" maxWidth="xs">
+      <CssBaseline />
+      <Box
+        sx={{
+          marginTop: 8,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}
+      >
+        <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          <LockOutlinedIcon />
+        </Avatar>
+        <Typography component="h1" variant="h5">
+          Booking
+        </Typography>
+        <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+          <TextField
+            margin="normal"
+            required
+            fullWidth
+            id="email"
+            label="Email Address"
+            name="email"
+            autoComplete="email"
+            autoFocus
+          />
+          <TextField
+            margin="normal"
+            required
+            fullWidth
+            name="password"
+            label="Password"
+            type="password"
+            id="password"
+            autoComplete="current-password"
+          />
+          <FormControlLabel
+            control={<Checkbox value="remember" color="primary" />}
+            label="Remember me"
+          />
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            sx={{ mt: 3, mb: 2 }}
+          >
+            Booking
+          </Button>
+          <Button
+            fullWidth
+            variant="outlined"
+            sx={{ mt: 1, mb: 2 }}
+            onClick={handleSubmitCheckout}
+          >
+            Checkout
+          </Button>
+          <Grid container>
+            <Grid item xs>
+              <Link href="#" variant="body2">
+                Forgot password?
+              </Link>
             </Grid>
-          </Box>
+            <Grid item>
+              <Link href="#/sign-up" variant="body2">
+                {"Don't have an account? Sign Up"}
+              </Link>
+            </Grid>
+          </Grid>
         </Box>
-        <Copyright sx={{ mt: 8, mb: 4 }} />
-      </Container>
-    </ThemeProvider>
+      </Box>
+      <Copyright sx={{ mt: 8, mb: 4 }} />
+    </Container>
+  </ThemeProvider>
+
   );
+
+
 }

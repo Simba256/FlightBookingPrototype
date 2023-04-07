@@ -8,6 +8,7 @@ import {
 import Login from './pages/login/Login';
 import SignUp from './pages/sign-up/SignUp';
 import Booking from './pages/booking/Booking';
+import Checkout from './pages/checkout/Checkout';
 function App() {
 
   // let [ isLoggedIn , setIsLoggedIn ] = useState(false)
@@ -57,6 +58,8 @@ function App() {
               <Route exact path = "/login" element = { <Login/> } />
 
               <Route exact path = "/booking" element = { <Booking/> } />
+
+              <Route exact path = "/checkout" element = { <Checkout/> } />
 
               <Route exact path = "/" element = { <Login/> } />
 
