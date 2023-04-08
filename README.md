@@ -1,7 +1,8 @@
 # FlightBookingPrototype
-**Instructions to get started
-**
-to run any command in any folder open that folder in file explorer click on the address path, write "cmd", press Enter, then type the required command in the terminal
+
+Instructions to get started
+
+To run any command in any folder open that folder in file explorer click on the address path, write "cmd", press Enter, then type the required command in the terminal
 
 Step # 0: Ensure you have node installed
 
