@@ -1,4 +1,8 @@
 # FlightBookingPrototype
+Instructions to get started
+
+to run any command in any folder open that folder in file explorer click on the address path, write "cmd", press Enter, then type the required command in the terminal
+
 Step # 0: Ensure you have node installed
 Step # 1: run "psql -U postgres" in cmd
 Step # 2: Create database and table from server/database.sql
